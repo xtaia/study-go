@@ -2,6 +2,6 @@ package test1
 
 import "fmt"
 
-func dd() {
+func ddd() {
 	fmt.Printf("dddd")
 }
