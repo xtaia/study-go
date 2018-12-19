@@ -1,8 +1,10 @@
 package main
 
-//import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-// func main()  {
-// 	fmt.Println("hell0 world !")
-// 	fmt.Println("bbbb")
-// }
+func main() {
+	fmt.Println("My favorite number is", math.Sqrt(7))
+}

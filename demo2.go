@@ -1,17 +1,11 @@
 package main
 
 import (
-	"flag"
+	"fmt"
+	"math"
 )
 
-var name string
+func mainD() {
+	fmt.Println(math.SqrtPi)
 
-func init() {
-	flag.StringVar(&name, "name", "everyone   eee", "The greeting object.")
-
-}
-
-func main() {
-	flag.Parse()
-	hello(name)
 }
