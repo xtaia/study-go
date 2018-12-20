@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func add(x int, y int) int {
@@ -44,7 +45,19 @@ const Pi = 3.143
 
 func main() {
 
-	fmt.Println(Pi)
+	fmt.Println(math.Pi)
+
+	a := byte(255)
+	b := uint8(255)
+	c := int8(127)
+	d := int8(a)
+	e := int8(c)
+
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(c)
+	fmt.Println(d)
+	fmt.Println(e)
 
 	// fmt.Println("My favorite nu  mber kis dd", math.Sqrt(7))
 	// fmt.Println(add(123, 2))
