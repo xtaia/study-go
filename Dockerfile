@@ -6,12 +6,12 @@ WORKDIR $GOPATH/src/github.com/mygohttp
 RUN mkdir lib && \
     cd lib && \
     git clone https://github.com/golang/crypto.git && \
-    git clone https://github.com/golang/net.git && \
-    copy lib/crypto  $GOPATH/src/golang.org/x && \
-    copy lib/net  $GOPATH/src/golang.org/x && \
-    ls $GOPATH/src/golang.org/x  && \
-    cd .. 
-ADD . $GOPATH/src/github.com/mygohttp
+    git clone https://github.com/golang/net.git && \ 
+    cd ..
+COPY lib/crypto  $GOPATH/src/golang.org/x/crypto
+COPY lib/net  $GOPATH/src/golang.org/x/net
+RUN  ls $GOPATH/src/golang.org/x 
+ADD  . $GOPATH/src/github.com/mygohttp
 #go构建可执行文件
 RUN go build .
 #暴露端口
