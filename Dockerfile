@@ -3,8 +3,8 @@ FROM golang:latest
 #设置工作目录
 WORKDIR $GOPATH/src/github.com/mygohttp
 #将服务器的go工程代码加入到docker容器中
-ADD /usr/local/go/src/golang.org/x  $GOPATH/src/golang.org/x
-ADD /usr/local/go/src/github.com/labstack/echo  $GOPATH/src/github.com/labstack/echo
+COPY /usr/local/go/src/golang.org/x  $GOPATH/src/golang.org/x
+COPY /usr/local/go/src/github.com/labstack/echo  $GOPATH/src/github.com/labstack/echo
 ADD . $GOPATH/src/github.com/mygohttp
 #go构建可执行文件
 RUN go build .
