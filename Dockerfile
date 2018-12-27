@@ -11,8 +11,8 @@ RUN mkdir lib && \
 RUN ls lib && \
     pwd
 RUN pwd   
-COPY ./lib/crypto  $GOPATH/src/golang.org/x/crypto
-COPY ./lib/net  $GOPATH/src/golang.org/x/net
+COPY /go/lib/crypto  $GOPATH/src/golang.org/x/crypto
+COPY /go/lib/net  $GOPATH/src/golang.org/x/net
 RUN  ls $GOPATH/src/golang.org/x 
 ADD  . $GOPATH/src/github.com/mygohttp
 #go构建可执行文件
