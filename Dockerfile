@@ -13,3 +13,6 @@ RUN go build .
 EXPOSE 6064
 #最终运行docker的命令
 ENTRYPOINT  ["./mygohttp"]
+
+
+
