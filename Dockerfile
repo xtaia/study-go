@@ -6,8 +6,8 @@ WORKDIR $GOPATH/src/github.com/mygohttp
 RUN mkdir lib && \
     git clone https://github.com/golang/crypto.git && \
     git clone https://github.com/golang/net.git && \
-    lib/crypto  $GOPATH/src/golang.org/x && \
-    lib/net  $GOPATH/src/golang.org/x && \
+    copy lib/crypto  $GOPATH/src/golang.org/x && \
+    copy lib/net  $GOPATH/src/golang.org/x && \
     ls $GOPATH/src/golang.org/x
 ADD . $GOPATH/src/github.com/mygohttp
 #go构建可执行文件
