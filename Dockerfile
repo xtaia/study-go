@@ -3,9 +3,9 @@ FROM golang:latest
 #设置工作目录
 WORKDIR $GOPATH/src/github.com/mygohttp
 #将服务器的go工程代码加入到docker容器中
-COPY lib/crypto  $GOPATH/src/golang.org/x
-COPY lib/net  $GOPATH/src/golang.org/x
-COPY lib/echo  $GOPATH/src/github.com/labstack/echo
+COPY /usr/local/wk/lib/crypto  $GOPATH/src/golang.org/x
+COPY /usr/local/wk/lib/net  $GOPATH/src/golang.org/x
+RUN ls $GOPATH/src/golang.org/x
 ADD . $GOPATH/src/github.com/mygohttp
 #go构建可执行文件
 RUN go build .
