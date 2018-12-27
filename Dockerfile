@@ -8,7 +8,7 @@ RUN mkdir lib && \
     git clone https://github.com/golang/crypto.git && \
     git clone https://github.com/golang/net.git && \ 
     cd ..
-RUN  ls lib
+RUN  ls lib && \ pwd 
 COPY lib/crypto  $GOPATH/src/golang.org/x/crypto
 COPY lib/net  $GOPATH/src/golang.org/x/net
 RUN  ls $GOPATH/src/golang.org/x 
