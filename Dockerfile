@@ -4,11 +4,13 @@ FROM golang:latest
 WORKDIR $GOPATH/src/github.com/mygohttp
 #将服务器的go工程代码加入到docker容器中
 RUN mkdir lib && \
+    cd lib && \
     git clone https://github.com/golang/crypto.git && \
     git clone https://github.com/golang/net.git && \
     copy lib/crypto  $GOPATH/src/golang.org/x && \
     copy lib/net  $GOPATH/src/golang.org/x && \
-    ls $GOPATH/src/golang.org/x
+    ls $GOPATH/src/golang.org/x  && \
+    cd ..
 ADD . $GOPATH/src/github.com/mygohttp
 #go构建可执行文件
 RUN go build .
