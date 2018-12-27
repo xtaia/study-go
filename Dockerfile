@@ -10,7 +10,7 @@ RUN mkdir lib && \
     copy lib/crypto  $GOPATH/src/golang.org/x && \
     copy lib/net  $GOPATH/src/golang.org/x && \
     ls $GOPATH/src/golang.org/x  && \
-    cd ..
+    cd .. 
 ADD . $GOPATH/src/github.com/mygohttp
 #go构建可执行文件
 RUN go build .
