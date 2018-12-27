@@ -1,7 +1,7 @@
 #源镜像
 FROM golang:latest
 #设置工作目录
-WORKDIR $GOPATH/src/github.com/mygohttp
+#WORKDIR $GOPATH/src/github.com/mygohttp
 #将服务器的go工程代码加入到docker容器中
 RUN mkdir lib && \
     cd lib && \
