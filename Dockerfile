@@ -7,10 +7,14 @@ ADD https://codeload.github.com/golang/crypto/zip/master  $GOPATH/src/golang.org
 ADD https://codeload.github.com/golang/net/zip/master  $GOPATH/src/golang.org/x/net
 RUN apt-get update &&\
     apt-get install -y unzip  &&\
-    unzip -d $GOPATH/src/golang.org/x/dd $GOPATH/src/golang.org/x/crypto  &&\
+    unzip -d $GOPATH/src/golang.org/x/aa $GOPATH/src/golang.org/x/crypto  &&\
     rm -r $GOPATH/src/golang.org/x/crypto  &&\
-    mv $GOPATH/src/golang.org/x/dd/crypto-master $GOPATH/src/golang.org/x/crypto &&\ 
+    mv $GOPATH/src/golang.org/x/aa/crypto-master $GOPATH/src/golang.org/x/crypto &&\ 
     ls $GOPATH/src/golang.org/x/crypto -trl &&\
+    unzip -d $GOPATH/src/golang.org/x/bb $GOPATH/src/golang.org/x/net  &&\
+    rm -r $GOPATH/src/golang.org/x/net  &&\
+    mv $GOPATH/src/golang.org/x/bb/net-master $GOPATH/src/golang.org/x/net &&\ 
+    ls $GOPATH/src/golang.org/x/net -trl &&\
     go get github.com/labstack/echo/...
 ADD  . $GOPATH/src/github.com/mygohttp
 #go构建可执行文件
