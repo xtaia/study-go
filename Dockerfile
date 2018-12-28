@@ -8,8 +8,8 @@ ADD https://codeload.github.com/golang/net/zip/master  $GOPATH/src/golang.org/x/
 RUN apt-get update &&\
     apt-get install -y unzip  &&\
     unzip $GOPATH/src/golang.org/x/crypto &&\
-    mv $GOPATH/src/golang.org/x/crypto-master $GOPATH/src/golang.org/x/crypto &&\
     ls $GOPATH/src/golang.org/x -trl &&\
+    mv $GOPATH/src/golang.org/x/crypto-master $GOPATH/src/golang.org/x/crypto &&\    
     go get github.com/labstack/echo/...
 ADD  . $GOPATH/src/github.com/mygohttp
 #go构建可执行文件
