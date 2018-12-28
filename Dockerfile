@@ -7,7 +7,7 @@ ADD https://codeload.github.com/golang/crypto/zip/master  $GOPATH/src/golang.org
 ADD https://codeload.github.com/golang/net/zip/master  $GOPATH/src/golang.org/x/net
 RUN apt-get update &&\
     apt-get install -y unzip  &&\
-    unzip $GOPATH/src/golang.org/x/crypto &&\
+    unzip -d $GOPATH/src/golang.org/x/crypto $GOPATH/src/golang.org/x/crypto  &&\
     ls $GOPATH/src/golang.org/x -trl &&\
     mv $GOPATH/src/golang.org/x/crypto-master $GOPATH/src/golang.org/x/crypto &&\    
     go get github.com/labstack/echo/...
