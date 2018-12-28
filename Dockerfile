@@ -9,7 +9,7 @@ RUN apt-get update &&\
     apt-get install -y unzip  &&\
     unzip -d $GOPATH/src/golang.org/x/dd $GOPATH/src/golang.org/x/crypto  &&\
     rm -r $GOPATH/src/golang.org/x/crypto  &&\
-    mv $GOPATH/src/golang.org/x/dd $GOPATH/src/golang.org/x/crypto &&\ 
+    mv $GOPATH/src/golang.org/x/dd/crypto-master $GOPATH/src/golang.org/x/crypto &&\ 
     ls $GOPATH/src/golang.org/x/crypto -trl &&\
     go get github.com/labstack/echo/...
 ADD  . $GOPATH/src/github.com/mygohttp
